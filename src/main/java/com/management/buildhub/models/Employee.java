@@ -25,6 +25,7 @@ public class Employee {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "crew_id")
+    @ManyToOne
+    @JoinColumn(name = "crew_id")
     private Crew crew;
 }
