@@ -46,14 +46,12 @@ public class WorkplanService {
         if (existingWorkplanOptional.isPresent()) {
             Workplan existingWorkplan = existingWorkplanOptional.get();
             Workplan updatedWorkplan = WorkplanMapper.convertToEntity(updatedWorkplanDto);
-            // Update fields as needed
             existingWorkplan.setName(updatedWorkplan.getName());
             existingWorkplan.setStartDate(updatedWorkplan.getStartDate());
             existingWorkplan.setEndDate(updatedWorkplan.getEndDate());
             existingWorkplan.setDescription(updatedWorkplan.getDescription());
             existingWorkplan.setWorksite(updatedWorkplan.getWorksite());
             existingWorkplan.setStatus(updatedWorkplan.getStatus());
-            // Update other fields accordingly
             Workplan savedWorkplan = workplanRepository.save(existingWorkplan);
             return WorkplanMapper.convertToDto(savedWorkplan);
         }

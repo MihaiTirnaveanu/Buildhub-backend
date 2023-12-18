@@ -35,7 +35,7 @@ public class Task {
     private String description;
 
     @Column(name = "duration")
-    private String duration;
+    private Long duration;
 
     @Column(name = "resources")
     private String resources;

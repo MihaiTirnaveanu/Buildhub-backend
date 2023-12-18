@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/objectives")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ObjectiveController {
 
     private final ObjectiveService objectiveService;
@@ -54,6 +54,6 @@ public class ObjectiveController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteObjectiveById(@PathVariable Long id) {
         objectiveService.deleteObjectiveById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

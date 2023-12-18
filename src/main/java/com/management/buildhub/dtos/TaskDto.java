@@ -15,7 +15,7 @@ public class TaskDto {
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private String description;
-    private String duration;
+    private Long duration;
     private String resources;
     private Set<Long> objectiveIds;
     private Set<Long> crewIds;

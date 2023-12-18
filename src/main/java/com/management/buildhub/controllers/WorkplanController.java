@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/workplans")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class WorkplanController {
 
     private final WorkplanService workplanService;
@@ -54,6 +54,6 @@ public class WorkplanController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWorkplanById(@PathVariable Long id) {
         workplanService.deleteWorkplanById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

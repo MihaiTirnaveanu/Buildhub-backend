@@ -46,11 +46,10 @@ public class ObjectiveService {
         if (existingObjectiveOptional.isPresent()) {
             Objective existingObjective = existingObjectiveOptional.get();
             Objective updatedObjective = ObjectiveMapper.convertToEntity(updatedObjectiveDto);
-            // Update fields as needed
             existingObjective.setName(updatedObjective.getName());
             existingObjective.setStartDate(updatedObjective.getStartDate());
             existingObjective.setEndDate(updatedObjective.getEndDate());
-            // Update other fields accordingly
+            existingObjective.setWorkplan(updatedObjective.getWorkplan());
             Objective savedObjective = objectiveRepository.save(existingObjective);
             return ObjectiveMapper.convertToDto(savedObjective);
         }

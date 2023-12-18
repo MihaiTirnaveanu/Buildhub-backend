@@ -46,14 +46,12 @@ public class TaskService {
         if (existingTaskOptional.isPresent()) {
             Task existingTask = existingTaskOptional.get();
             Task updatedTask = TaskMapper.convertToEntity(updatedTaskDto);
-            // Update fields as needed
             existingTask.setName(updatedTask.getName());
             existingTask.setStartDate(updatedTask.getStartDate());
             existingTask.setEndDate(updatedTask.getEndDate());
             existingTask.setDescription(updatedTask.getDescription());
             existingTask.setDuration(updatedTask.getDuration());
             existingTask.setResources(updatedTask.getResources());
-            // Update other fields accordingly
             Task savedTask = taskRepository.save(existingTask);
             return TaskMapper.convertToDto(savedTask);
         }

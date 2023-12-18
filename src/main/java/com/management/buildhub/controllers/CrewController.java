@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/crews")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CrewController {
 
     private final CrewService crewService;
@@ -54,6 +54,6 @@ public class CrewController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCrewById(@PathVariable Long id) {
         crewService.deleteCrewById(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
